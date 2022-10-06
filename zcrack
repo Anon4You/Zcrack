@@ -1,0 +1,34 @@
+#!/usr/bin/python
+import os, sys, zipfile
+try:
+    import tqdm
+except:
+    os.system("pip install tqdm")
+from tqdm import tqdm
+
+# this wil be our logo
+os.system("clear && figlet Zcrack")
+print("                        by Alienkrishn")
+print("githun.com/Anon4You\n")
+
+# user input zipfile and wordlist
+zip=input("Enter zip: ") #storing in variable
+pswd=input("Wordlist \33[31m[default=pass.txt]:\33[0m ") #storing in variable
+
+zip_file=zipfile.ZipFile(zip)
+words=len(list(open(pswd,"rb")))
+print("\33[33;1m\nCracking password please wait...\33[0m")
+
+with open(pswd,"rb") as wordlist:
+    for word in tqdm(wordlist, total=words, unit=" words"):
+        try:
+            zip_file.extractall(pwd=word.strip())
+        except:
+            continue
+        else:
+            print("\33[31m")
+            os.system("figlet -f smscript Cracked")
+            print("[✓]\33[32mPassword Found...\33[0m",word.decode().strip())
+            exit(0)
+
+print("[x]Password not found, try onether wordlist...")
