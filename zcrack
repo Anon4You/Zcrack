@@ -27,7 +27,7 @@ with open(pswd,"rb") as wordlist:
             continue
         else:
             print("\33[31m")
-            os.system("figlet -f smscript Cracked")
+            os.system("figlet -f digital Cracked")
             print("[✓]\33[32mPassword Found...\33[0m",word.decode().strip())
             exit(0)
 
