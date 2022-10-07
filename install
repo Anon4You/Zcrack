@@ -4,6 +4,6 @@ echo "Installing tool please wait..."
 apt install -y python figlet zip unzip crunch > /dev/null 2>&1
 curl -LO https://raw.githubusercontent.com/Anon4You/Zcrack/main/zcrack > /dev/null 2>&1
 mv zcrack $PREFIX/bin && chmod +x $PREFIX/bin/zcrack
-crunch 4 5 -f $PREFIX/share/crunch/charset.lst mixalpha-numeric-all-space-sv -o pass.txt > /dev/null 2>&1
+crunch 4 5 -f $PREFIX/share/crunch/charset.lst mixalpha-numeric -o pass.txt > /dev/null 2>&1
 figlet installed
 echo "Run the tool by typing "$'\e[31;1m'"zcrack "$'\e[0m'"from any directory"
